@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry location="/Users/lottery/web/workspace/MyBatisGenerator/lib/jdbc/ojdbc14-10.2.0.2.0.jar" />
+	<context id="context1">
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@192.168.1.99:1521:lotdb" userId="hbgx"
+			password="hbgx" />
+		<javaModelGenerator targetPackage="com.palm.generator.bean"
+			targetProject="/Users/lottery/Desktop/Project/src" />
+		<sqlMapGenerator targetPackage="mybatis"
+			targetProject="/Users/lottery/Desktop/Project/resources" />
+		<javaClientGenerator targetPackage="com.palm.generator.client"
+			targetProject="/Users/lottery/Desktop/Project/src" type="XMLMAPPER" />
+		<table schema="" tableName="USER_TABLES" domainObjectName="UserTables"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false" />
+		<table schema="" tableName="USER_TAB_COMMENTS" domainObjectName="UserTabComments"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false" />
+		<table schema="" tableName="USER_COL_COMMENTS" domainObjectName="UserColComments"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false" />
+		<table schema="" tableName="USER_TAB_COLUMNS" domainObjectName="UserTabColumns"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false" />
+		<!-- <table schema="" tableName="USER_ACCOUNT" /> -->
+	</context>
+</generatorConfiguration>

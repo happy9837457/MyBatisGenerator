@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="UserTables">
+
+	<resultMap id="BaseResMap" type="UserTables">
+		<result column="TABLE_NAME" property="tableName" jdbcType="VARCHAR" />
+		<result column="TABLESPACE_NAME" property="tablespaceName"
+			jdbcType="VARCHAR" />
+		<result column="CLUSTER_NAME" property="clusterName" jdbcType="VARCHAR" />
+		<result column="IOT_NAME" property="iotName" jdbcType="VARCHAR" />
+		<result column="STATUS" property="status" jdbcType="VARCHAR" />
+		<result column="PCT_FREE" property="pctFree" jdbcType="DECIMAL" />
+		<result column="PCT_USED" property="pctUsed" jdbcType="DECIMAL" />
+		<result column="INI_TRANS" property="iniTrans" jdbcType="DECIMAL" />
+		<result column="MAX_TRANS" property="maxTrans" jdbcType="DECIMAL" />
+		<result column="INITIAL_EXTENT" property="initialExtent"
+			jdbcType="DECIMAL" />
+		<result column="NEXT_EXTENT" property="nextExtent" jdbcType="DECIMAL" />
+		<result column="MIN_EXTENTS" property="minExtents" jdbcType="DECIMAL" />
+		<result column="MAX_EXTENTS" property="maxExtents" jdbcType="DECIMAL" />
+		<result column="PCT_INCREASE" property="pctIncrease" jdbcType="DECIMAL" />
+		<result column="FREELISTS" property="freelists" jdbcType="DECIMAL" />
+		<result column="FREELIST_GROUPS" property="freelistGroups"
+			jdbcType="DECIMAL" />
+		<result column="LOGGING" property="logging" jdbcType="VARCHAR" />
+		<result column="BACKED_UP" property="backedUp" jdbcType="VARCHAR" />
+		<result column="NUM_ROWS" property="numRows" jdbcType="DECIMAL" />
+		<result column="BLOCKS" property="blocks" jdbcType="DECIMAL" />
+		<result column="EMPTY_BLOCKS" property="emptyBlocks" jdbcType="DECIMAL" />
+		<result column="AVG_SPACE" property="avgSpace" jdbcType="DECIMAL" />
+		<result column="CHAIN_CNT" property="chainCnt" jdbcType="DECIMAL" />
+		<result column="AVG_ROW_LEN" property="avgRowLen" jdbcType="DECIMAL" />
+		<result column="AVG_SPACE_FREELIST_BLOCKS" property="avgSpaceFreelistBlocks"
+			jdbcType="DECIMAL" />
+		<result column="NUM_FREELIST_BLOCKS" property="numFreelistBlocks"
+			jdbcType="DECIMAL" />
+		<result column="DEGREE" property="degree" jdbcType="VARCHAR" />
+		<result column="INSTANCES" property="instances" jdbcType="VARCHAR" />
+		<result column="CACHE" property="cache" jdbcType="VARCHAR" />
+		<result column="TABLE_LOCK" property="tableLock" jdbcType="VARCHAR" />
+		<result column="SAMPLE_SIZE" property="sampleSize" jdbcType="DECIMAL" />
+		<result column="LAST_ANALYZED" property="lastAnalyzed"
+			jdbcType="DATE" />
+		<result column="PARTITIONED" property="partitioned" jdbcType="VARCHAR" />
+		<result column="IOT_TYPE" property="iotType" jdbcType="VARCHAR" />
+		<result column="TEMPORARY" property="temporary" jdbcType="VARCHAR" />
+		<result column="SECONDARY" property="secondary" jdbcType="VARCHAR" />
+		<result column="NESTED" property="nested" jdbcType="VARCHAR" />
+		<result column="BUFFER_POOL" property="bufferPool" jdbcType="VARCHAR" />
+		<result column="ROW_MOVEMENT" property="rowMovement" jdbcType="VARCHAR" />
+		<result column="GLOBAL_STATS" property="globalStats" jdbcType="VARCHAR" />
+		<result column="USER_STATS" property="userStats" jdbcType="VARCHAR" />
+		<result column="DURATION" property="duration" jdbcType="VARCHAR" />
+		<result column="SKIP_CORRUPT" property="skipCorrupt" jdbcType="VARCHAR" />
+		<result column="MONITORING" property="monitoring" jdbcType="VARCHAR" />
+		<result column="CLUSTER_OWNER" property="clusterOwner"
+			jdbcType="VARCHAR" />
+		<result column="DEPENDENCIES" property="dependencies" jdbcType="VARCHAR" />
+		<result column="COMPRESSION" property="compression" jdbcType="VARCHAR" />
+		<result column="DROPPED" property="dropped" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="queryAllUserTableNames" resultType="string">
+		SELECT TABLE_NAME FROM USER_TABLES ORDER BY TABLE_NAME
+	</select>
+
+</mapper>

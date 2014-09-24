@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="true" />
+		<setting name="lazyLoadingEnabled" value="true" />
+		<setting name="multipleResultSetsEnabled" value="true" />
+		<setting name="useColumnLabel" value="true" />
+		<setting name="useGeneratedKeys" value="false" />
+		<setting name="defaultExecutorType" value="SIMPLE" />
+		<setting name="defaultStatementTimeout" value="25000" />
+	</settings>
+	<typeAliases>
+		<typeAlias alias="UserColComments" type="com.palm.generator.oracle.bean.UserColComments" />
+		<typeAlias alias="UserTabColumns" type="com.palm.generator.oracle.bean.UserTabColumns" />
+		<typeAlias alias="UserTabComments" type="com.palm.generator.oracle.bean.UserTabComments" />
+		<typeAlias alias="UserTables" type="com.palm.generator.oracle.bean.UserTables" />
+	</typeAliases>
+	<mappers>
+		<mapper resource="mybatis/oracle/UserColComments.xml" />
+		<mapper resource="mybatis/oracle/UserTabColumns.xml" />
+		<mapper resource="mybatis/oracle/UserTabComments.xml" />
+		<mapper resource="mybatis/oracle/UserTables.xml" />
+	</mappers>
+</configuration>

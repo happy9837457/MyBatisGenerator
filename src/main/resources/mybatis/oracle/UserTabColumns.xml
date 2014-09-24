@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="UserTabColumns">
+
+	<resultMap id="BaseResMap" type="UserTabColumns">
+		<result column="TABLE_NAME" property="tableName" jdbcType="VARCHAR" />
+		<result column="COLUMN_NAME" property="columnName" jdbcType="VARCHAR" />
+		<result column="DATA_TYPE" property="dataType" jdbcType="VARCHAR" />
+		<result column="DATA_TYPE_MOD" property="dataTypeMod" jdbcType="VARCHAR" />
+		<result column="DATA_TYPE_OWNER" property="dataTypeOwner"
+			jdbcType="VARCHAR" />
+		<result column="DATA_LENGTH" property="dataLength" jdbcType="DECIMAL" />
+		<result column="DATA_PRECISION" property="dataPrecision"
+			jdbcType="DECIMAL" />
+		<result column="DATA_SCALE" property="dataScale" jdbcType="DECIMAL" />
+		<result column="NULLABLE" property="nullable" jdbcType="VARCHAR" />
+		<result column="COLUMN_ID" property="columnId" jdbcType="DECIMAL" />
+		<result column="DEFAULT_LENGTH" property="defaultLength"
+			jdbcType="DECIMAL" />
+		<result column="NUM_DISTINCT" property="numDistinct" jdbcType="DECIMAL" />
+		<result column="DENSITY" property="density" jdbcType="DECIMAL" />
+		<result column="NUM_NULLS" property="numNulls" jdbcType="DECIMAL" />
+		<result column="NUM_BUCKETS" property="numBuckets" jdbcType="DECIMAL" />
+		<result column="LAST_ANALYZED" property="lastAnalyzed"
+			jdbcType="DATE" />
+		<result column="SAMPLE_SIZE" property="sampleSize" jdbcType="DECIMAL" />
+		<result column="CHARACTER_SET_NAME" property="characterSetName"
+			jdbcType="VARCHAR" />
+		<result column="CHAR_COL_DECL_LENGTH" property="charColDeclLength"
+			jdbcType="DECIMAL" />
+		<result column="GLOBAL_STATS" property="globalStats" jdbcType="VARCHAR" />
+		<result column="USER_STATS" property="userStats" jdbcType="VARCHAR" />
+		<result column="AVG_COL_LEN" property="avgColLen" jdbcType="DECIMAL" />
+		<result column="CHAR_LENGTH" property="charLength" jdbcType="DECIMAL" />
+		<result column="CHAR_USED" property="charUsed" jdbcType="VARCHAR" />
+		<result column="V80_FMT_IMAGE" property="v80FmtImage" jdbcType="VARCHAR" />
+		<result column="DATA_UPGRADED" property="dataUpgraded"
+			jdbcType="VARCHAR" />
+		<result column="HISTOGRAM" property="histogram" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="queryUserTabColumns" parameterType="string"
+		resultMap="BaseResMap">
+		SELECT * FROM USER_TAB_COLUMNS WHERE TABLE_NAME =
+		#{tableName}
+	</select>
+
+</mapper>

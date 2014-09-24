@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="UserColComments">
+
+	<resultMap id="BaseResMap" type="UserColComments">
+		<result column="TABLE_NAME" property="tableName" jdbcType="VARCHAR" />
+		<result column="COLUMN_NAME" property="columnName" jdbcType="VARCHAR" />
+		<result column="COMMENTS" property="comments" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="queryUserColComments" parameterType="map" resultMap="BaseResMap">
+		SELECT * FROM USER_COL_COMMENTS WHERE TABLE_NAME = #{tableName} AND
+		COLUMN_NAME = #{columnName}
+	</select>
+
+</mapper>
